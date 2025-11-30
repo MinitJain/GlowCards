@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #242424;
+  color: white;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes rotate {
+  from {
+    --rotate: 0deg;
+  }
+  to {
+    --rotate: 360deg;
+  }
+}
+
+.box {
+  max-width: 300px;
+  padding-inline: 10px;
+  padding-bottom: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 15px;
+  background: conic-gradient(
+        from var(--rotate),
+        #021b3b,
+        #013a63,
+        #0163bb,
+        #00a3ff,
+        #021b3b
+      )
+      padding-box,
+    conic-gradient(from var(--rotate), #4fd2ff, #00f0ff, #4fd2ff, #00f0ff)
+      border-box;
+  border: 5px solid transparent;
+}
+
+.box:hover {
+  transition: all 0.3s linear;
+  border: 5px solid transparent;
+  box-shadow: 0 0 30px #00b3ff;
+  animation: rotate 3s linear infinite;
+  text-shadow: 0 0 5px #0163bb;
+}
+
+.box img {
+  width: 100%;
+  border-radius: inherit;
+}
+
+.box.green {
+  background: conic-gradient(
+        from var(--rotate),
+        #041f14,
+        #064c2c,
+        #0b7a3c,
+        #064c2c,
+        #041f14
+      )
+      padding-box,
+    conic-gradient(from var(--rotate), #00ff88, #00ffcc, #00ff88, #00ffcc)
+      border-box;
+}
+
+.box.green:hover {
+  box-shadow: 0 0 30px #00ff88;
+  text-shadow: 0 0 5px #00ff88;
+}
+
+.box.yellow {
+  background: conic-gradient(
+        from var(--rotate),
+        #262313,
+        #3a3419,
+        #4f4720,
+        #3a3419,
+        #262313
+      )
+      padding-box,
+    conic-gradient(from var(--rotate), #ffe27a, #fff3b0, #ffe27a, #fff3b0)
+      border-box;
+}
+
+.box.yellow:hover {
+  box-shadow: 0 0 30px #ffe27a;
+  text-shadow: 0 0 5px #fff3b0;
+}
